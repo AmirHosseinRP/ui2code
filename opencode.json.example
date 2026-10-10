@@ -1,0 +1,35 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/mimo-v2.5-pro",
+  "agent": {
+    "ui-builder": {
+      "description": "Generates frontend components from UI screenshots",
+      "mode": "primary",
+      "prompt": "{file:./.opencode/agents/ui-builder.md}",
+      "permission": {
+        "edit": "allow",
+        "bash": "ask",
+        "question": "allow"
+      }
+    },
+    "ui-analyzer": {
+      "description": "Analyzes UI screenshots and extracts structured specifications",
+      "mode": "subagent",
+      "hidden": true,
+      "prompt": "{file:./.opencode/agents/ui-analyzer.md}",
+      "permission": {
+        "edit": "deny",
+        "bash": "deny",
+        "question": "deny"
+      }
+    }
+  },
+  "command": {
+    "ui2code": {
+      "template": "Generate a frontend component from the screenshot at $ARGUMENTS.\n\nFollow the full workflow:\n1. Analyze the screenshot to extract a UI specification\n2. Detect the project's technology stack\n3. Scan existing component conventions\n4. Map the UI spec to the existing design system\n5. Ask clarifying questions before coding\n6. Present an implementation plan\n7. Implement the component following detected conventions exactly\n8. Verify with typecheck/lint/build\n9. Summarize what was created",
+      "description": "Generate component from UI screenshot",
+      "agent": "ui-builder"
+    }
+  },
+  "plugin": ["@ui2code/opencode-plugin"]
+}

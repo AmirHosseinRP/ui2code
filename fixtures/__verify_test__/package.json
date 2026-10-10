@@ -1,0 +1,1 @@
+{"scripts":{"slow":"node -e \"setTimeout(() => {}, 30000)\""}}

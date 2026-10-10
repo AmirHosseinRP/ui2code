@@ -1,0 +1,22 @@
+{
+  "name": "@ui2code/opencode-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenCode plugin providing ui2code custom tools (bundled into the published ui2code package)",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "echo 'Plugin is loaded as source by OpenCode'",
+    "typecheck": "tsc --noEmit",
+    "clean": "echo 'no dist'"
+  },
+  "dependencies": {
+    "@ui2code/core": "workspace:*",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  }
+}

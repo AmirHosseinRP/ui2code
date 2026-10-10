@@ -1,0 +1,1 @@
+export { mapToDesignSystem, type MapToDesignSystemOptions, type DesignSystemMapping, type MappedComponent } from "./mapper";
