@@ -1,0 +1,53 @@
+{
+  "name": "ui2code",
+  "version": "0.1.0",
+  "description": "Turn UI screenshots into frontend components that match your project's stack, conventions and design system",
+  "type": "module",
+  "bin": {
+    "ui2code": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ai",
+    "codegen",
+    "screenshot",
+    "design-to-code",
+    "ui",
+    "frontend",
+    "opencode",
+    "cli"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/ui2code.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/your-org/ui2code#readme",
+  "bugs": {
+    "url": "https://github.com/your-org/ui2code/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && tsup --config tsup.plugin.config.ts",
+    "prepublishOnly": "tsup && tsup --config tsup.plugin.config.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@clack/prompts": "^1.8.1",
+    "@types/node": "^22.0.0",
+    "@ui2code/core": "workspace:*",
+    "commander": "^13.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0"
+  }
+}
