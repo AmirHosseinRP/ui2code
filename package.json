@@ -1,5 +1,5 @@
 {
-  "name": "ui2code",
+  "name": "ui2code-monorepo",
   "author": "Amirhossein Rezapanah",
   "version": "0.1.0",
   "description": "OpenCode-based agent that turns UI screenshots into frontend components",
